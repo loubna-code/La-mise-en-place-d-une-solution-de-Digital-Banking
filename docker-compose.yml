@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  # Service pour la base de données PostgreSQL
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: mydb
+    ports:
+      - 5432:5432
+
+
+
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.admin
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - 80:80
+
+volumes:
+  postgres_data:
