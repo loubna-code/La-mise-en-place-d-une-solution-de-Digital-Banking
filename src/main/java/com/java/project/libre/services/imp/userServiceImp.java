@@ -39,7 +39,7 @@ public class userServiceImp implements userServiceInterface {
     @Override
     public <optional> User getUserByEmail(String email) {
 
-        return UserRepository.getByEmail(email);
+        return UserRepository.getByEmail(email).get();
     }
 
     @Override

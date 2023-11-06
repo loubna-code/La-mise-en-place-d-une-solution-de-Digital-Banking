@@ -19,27 +19,12 @@ import java.util.Set;
 public class ProjectLibreApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(ProjectLibreApplication.class, args);
 	}
-	@Bean
-	CommandLineRunner start( roleServiceInterface roleS, userServiceInterface userS){
-		return args->{
-
-			roleS.addRole(new Role(null , role.valueOf("role_user"),new HashSet<>()));
-			roleS.addRole(new Role(null , role.valueOf("role_admin"), new HashSet<>()));
-
-			userS.addUser(new User(null ,"moubarikloubna1@gmail.com","loubna123", new HashSet<>()));
-			userS.addUser(new User(null ,"gouaicheoussama@gmail.com","loubna123", new HashSet<>()));
-
-			userS.AddRoleToUser("moubarikloubna1@gmail.com",role.valueOf("role_admin"));
-			userS.AddRoleToUser("gouaicheoussama@gmail.com",role.valueOf("role_user"));
 
 
 
 
-		};
 
-	}
-
-
-}
+   }
